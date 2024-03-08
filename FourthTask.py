@@ -8,6 +8,8 @@ from PyQt5.QtGui import QPixmap
 
 class Ui_MainWindow(object):
     def __init__(self):
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
@@ -16,8 +18,6 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 410)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
 
         self.pushButton_3.setGeometry(QtCore.QRect(430, 360, 161, 41))
         self.pushButton_3.setObjectName("pushButton_3")
