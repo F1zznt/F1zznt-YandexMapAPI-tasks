@@ -10,7 +10,7 @@ class App(QWidget):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle("Поиск по координатам")
+        self.setWindowTitle("Умная Карта")
         self.findBt.clicked.connect(self.findf)
 
     def setupUi(self, SmartMap):
@@ -20,7 +20,7 @@ class App(QWidget):
         self.label.setEnabled(False)
         self.label.setGeometry(QtCore.QRect(0, 0, 801, 801))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../../Downloads/background.jpg"))
+        self.label.setPixmap(QtGui.QPixmap("background.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(SmartMap)
