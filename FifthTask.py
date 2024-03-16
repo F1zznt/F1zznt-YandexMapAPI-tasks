@@ -266,7 +266,8 @@ class App(QWidget):
             # Поиск по координатам
         else:
             res = requests.get(
-                f"https://static-maps.yandex.ru/1.x/?ll={self.auxx},{self.auxy}&l={self.mode}&z={str(self.zoom)}")
+                f"https://static-maps.yandex.ru/1.x/?ll={self.auxx},{self.auxy}&l={self.mode}&z={str(self.zoom)}&"
+                f"pt={self.auxx},{self.auxy},pm2rdm")
             # Поиск по названию
         if res:
             with open("output.png", "wb") as file:
@@ -276,7 +277,8 @@ class App(QWidget):
             self.result.setPixmap(self.pixmap)
             self.found = True
         else:
-            pass
+            print("Ошибка поиска:")  # Причина ошибки для отладки
+            print("Код:", res.status_code, "(", res.reason, ")")
 
     def modechange(self):
         if self.modeEdit.currentText() == "Схема":
