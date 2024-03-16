@@ -267,7 +267,7 @@ class App(QWidget):
         else:
             res = requests.get(
                 f"https://static-maps.yandex.ru/1.x/?ll={self.auxx},{self.auxy}&l={self.mode}&z={str(self.zoom)}&"
-                f"pt={self.auxx},{self.auxy},pm2rdm")
+                f"pt={self.auxx},{self.auxy},pm2rdm")  # Создание метки по координатам, pm2rdm - настройки метки.
             # Поиск по названию
         if res:
             with open("output.png", "wb") as file:
